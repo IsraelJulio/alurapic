@@ -12,6 +12,6 @@ export class PhotoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Input() url = 'https://images.news18.com/ibnlive/uploads/2021/08/1628511415_lion-1200x800.jpg?impolicy=website&width=510&height=356';
-  @Input() description = 'lion';
+  @Input() url = '';
+  @Input() description = '';
 }
