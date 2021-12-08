@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-photo',
+  selector: 'ap-photo',
   templateUrl: './photo.component.html',
   styleUrls: ['./photo.component.css']
 })
@@ -12,4 +12,6 @@ export class PhotoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Input() url = 'https://images.news18.com/ibnlive/uploads/2021/08/1628511415_lion-1200x800.jpg?impolicy=website&width=510&height=356';
+  @Input() description = 'lion';
 }
