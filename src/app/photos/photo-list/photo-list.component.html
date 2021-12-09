@@ -1,1 +1,5 @@
-<p>photo-list works!</p>
+<ap-photo
+*ngFor="let photo of photosApi"
+[url]= "photo.url"
+[description]= "photo.id"
+></ap-photo>
