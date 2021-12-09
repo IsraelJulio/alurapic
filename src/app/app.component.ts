@@ -12,31 +12,32 @@ export class AppComponent {
 
 
 
-  // photos: Object[] = [];
+  photosApi: Photo[] = [];
+
   photos: Photo[] = [
   // photos = [
     {
       url:"https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg",
-      description:"lion"
+      description:"lion",
+      id:'k'
     },
     {
       url:"https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg",
-      description:"lion"
+      description:"lion",
+      id:'k'
     }
   ];
-  url: string = "https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg";
-  description: string = "lion";
+
   constructor(http: HttpClient){
 
-    // var o = http
-    // .get<Object[]>('https://www.pexels.com/photo/brown-rocks-during-golden-hour-2014422/')
-    // .subscribe(photos =>{
+    http
+    .get<Photo[]>('https://api.thecatapi.com/v1/images/search')
+    .subscribe(photos =>{
+      this.photosApi = photos
+    } );
 
-      //   console.log(photos);
-      // this.photos = photos
-      // } );
 
-      console.log(this.photos);
   }
 
 }
+
