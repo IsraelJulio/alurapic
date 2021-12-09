@@ -1,13 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Photo } from './models/Photo.model';
+import { PhotoService } from './photos/photo/photo.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'alurapic';
 
 
@@ -28,16 +29,10 @@ export class AppComponent {
     }
   ];
 
-  constructor(http: HttpClient){
+  constructor(private photoService: PhotoService){}
 
-    http
-    .get<Photo[]>('https://api.thecatapi.com/v1/images/search')
-    .subscribe(photos =>{
-      this.photosApi = photos
-    } );
-
-
+  ngOnInit(): void{
+    this.photoService.SearchPhoto().subscribe(x => this.photosApi = x)
   }
-
 }
 
