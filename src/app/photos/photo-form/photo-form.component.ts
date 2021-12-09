@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhotoFormComponent implements OnInit {
 
+  title: string = 'Fotos'
   constructor() { }
 
   ngOnInit(): void {
