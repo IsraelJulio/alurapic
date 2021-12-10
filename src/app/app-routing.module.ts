@@ -6,8 +6,10 @@ import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 
 const routes: Routes = [
   { path: '', component: PhotoListComponent },
+  { path: 'photos/:seuparametro', component: PhotoListComponent },
   { path: 'title', component: PhotoFormComponent},
-  { path: '**', component: NotFoundComponent}
+  { path: '**', component: NotFoundComponent},
+
 ];
 
 @NgModule({

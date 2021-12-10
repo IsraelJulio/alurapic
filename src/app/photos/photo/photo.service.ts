@@ -8,7 +8,8 @@ import { Photo } from "src/app/models/Photo.model";
 export class PhotoService{
 
 
-SearchPhoto() {
+SearchPhoto(parametros: string) {
+  console.log(parametros);
   return this.http
     .get<Photo[]>('https://api.thecatapi.com/v1/images/search');
 
