@@ -1,6 +1,17 @@
-
-
-<app-photos [photos]="photos"></app-photos>
+<div class="text-center mt-3 mb-3">
+  <form>
+      <input
+          #aqui
+          class="rounded"
+          type="search"
+          placeholder="search..."
+          autofocus
+          (keyup)="onKey($event)"
+          >
+  </form>
+</div>
+<!-- {{values | uppercase}} -->
+<app-photos [photos]="photos | filterByDescription: values"></app-photos>
 
 <div class="col-md-6">
 

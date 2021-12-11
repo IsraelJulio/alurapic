@@ -16,38 +16,42 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoListComponent implements OnInit, OnChanges {
   @Input() photosApi: Photo[] = [];
+  values= '';
+
+  onKey(event: any) { // without type info
+    this.values = event.target.value;
+  }
 
   photos: Photo[] = [
-    // photos = [
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
+      description: 'k',
       id: 'k',
     },
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
-      id: 'k',
+      description: 'kd',
+      id: 'kd',
     },
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
-      id: 'k',
+      description: 'kdv',
+      id: 'kdv',
     },
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
-      id: 'k',
+      description: 'kdvc',
+      id: 'kdvc',
     },
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
-      id: 'k',
+      description: 'kkkk',
+      id: 'kkkk',
     },
     {
       url: 'https://img.elo7.com.br/product/main/3722582/quadro-mosaico-4-pecas-rosto-do-leao-preto-e-branco-canvas.jpg',
-      description: 'lion',
-      id: 'k',
+      description: 'o',
+      id: 'o',
     },
   ];
 
