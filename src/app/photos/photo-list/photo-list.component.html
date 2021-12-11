@@ -1,10 +1,17 @@
-<ap-photo
-*ngFor="let photo of photosApi"
-[url]= "photo.url"
-[description]= "photo.id"
-></ap-photo>
-<ap-photo
-*ngFor="let photo of photos"
-[url]= "photo.url"
-[description]= "photo.id"
-></ap-photo>
+
+
+<app-photos [photos]="photos"></app-photos>
+
+<div class="col-md-6">
+
+  <ap-photo
+  *ngFor="let photo of photosApi"
+  [url]= "photo.url"
+  [description]= "photo.id"
+  ></ap-photo>
+  <!-- <ap-photo
+  *ngFor="let photo of photos"
+  [url]= "photo.url"
+  [description]= "photo.id"
+  ></ap-photo> -->
+</div>

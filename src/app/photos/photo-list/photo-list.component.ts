@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Photo } from 'src/app/models/Photo.model';
 import { PhotoService } from '../photo/photo.service';
@@ -8,8 +14,8 @@ import { PhotoService } from '../photo/photo.service';
   templateUrl: './photo-list.component.html',
   styleUrls: ['./photo-list.component.css'],
 })
-export class PhotoListComponent implements OnInit {
-  photosApi: Photo[] = [];
+export class PhotoListComponent implements OnInit, OnChanges {
+  @Input() photosApi: Photo[] = [];
 
   photos: Photo[] = [
     // photos = [
@@ -49,6 +55,10 @@ export class PhotoListComponent implements OnInit {
     private photoService: PhotoService,
     private activatedRoute: ActivatedRoute
   ) {}
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['photosApi']) console.log('deubommm');
+  }
 
   ngOnInit(): void {
     const parametros = this.activatedRoute.snapshot.params['seuparametro'];
