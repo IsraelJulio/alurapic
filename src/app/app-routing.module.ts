@@ -3,13 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
+import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 
 const routes: Routes = [
-  { path: '', component: PhotoListComponent },
+  // { path: '', component: PhotoListComponent },
+  {path: '',component: PhotoListComponent,resolve: {photos: PhotoListResolver}},
   { path: 'photos/:seuparametro', component: PhotoListComponent },
   { path: 'title', component: PhotoFormComponent},
   { path: '**', component: NotFoundComponent},
-
 ];
 
 @NgModule({

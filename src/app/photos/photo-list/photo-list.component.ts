@@ -16,9 +16,10 @@ import { PhotoService } from '../photo/photo.service';
 })
 export class PhotoListComponent implements OnInit, OnChanges {
   @Input() photosApi: Photo[] = [];
-  values= '';
+  values = '';
 
-  onKey(event: any) { // without type info
+  onKey(event: any) {
+    // without type info
     this.values = event.target.value;
   }
 
@@ -65,11 +66,13 @@ export class PhotoListComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    const parametros = this.activatedRoute.snapshot.params['seuparametro'];
-    for (let i = 0; i < 5; i++) {
-      this.photoService
-        .SearchPhoto(parametros)
-        .subscribe((x) => (this.photosApi = x));
-    }
+    // const parametros = this.activatedRoute.snapshot.params['seuparametro'];
+    // for (let i = 0; i < 5; i++) {
+    //   this.photoService
+    //     .SearchPhoto(parametros)
+    //     .subscribe((x) => (this.photosApi = x));
+    // }
+
+    this.photosApi = this.activatedRoute.snapshot.data['photos']
   }
 }
